@@ -108,6 +108,7 @@ autocmd BufWritePre *.php,*.js,*.bat call RTrim()
 
 " ファイルタイプ指定
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.snip set filetype snippet
 
 " ===================== プラグイン設定 ====================="
 "filetype off
@@ -117,10 +118,8 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " set helpfile=$VIMRUNTIME/doc/help.txt
  
 """ Vundle '''
-set rtp+=~/.vim/vundle
+set rtp+=~/.vim/vundle.git
 call vundle#rc()
-filetype plugin indent on
-au BufRead,BufNewFile *.snip setfiletype snippet
 
 " 利用中のプラグインをBundle
 Bundle 'Shougo/neocomplcache'
@@ -134,7 +133,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-markdown'
 Bundle 'chrismetcalf/vim-yankring'
 Bundle 'tyru/open-browser.vim'
-
+filetype plugin indent on 
 
 " ====================================================================
 " quickrun-vim 
