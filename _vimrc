@@ -128,6 +128,7 @@ endif
 
 " 利用中のプラグインをBundle
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache-snippets-complete'
 "Bundle 'Shogo/unite.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
