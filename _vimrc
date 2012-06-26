@@ -116,10 +116,15 @@ autocmd BufNewFile,BufRead *.snip set filetype snippet
 " call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 " set helpfile=$VIMRUNTIME/doc/help.txt
- 
+
 """ Vundle '''
-set rtp+=~/.vim/vundle.git
-call vundle#rc()
+if has("win32") || has("win64")
+  set rtp+=~/vimfiles/vundle.git/ 
+  call vundle#rc('~/vimfiles/bundle/')
+else
+  set rtp+=~/.vim/vundle.git/ 
+  call vundle#rc()
+endif
 
 " 利用中のプラグインをBundle
 Bundle 'Shougo/neocomplcache'

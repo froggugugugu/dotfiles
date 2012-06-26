@@ -11,7 +11,7 @@ hi Pmenu guibg=#666666
 hi PmenuSel guibg=#8cd0d3 guifg=#666666
 hi PmenuSbar guibg=#333333
 
-set transparency = 25 
+"set transparency=25
 
 "全角の可視化
 scriptencoding utf-8
@@ -21,7 +21,10 @@ augroup highlightZenkakuSpace
   autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
 augroup END
 
-set guifont=Andale\ Mono:h16
-set guifontwide=ヒラギノ角ゴ\ StdN\ W4:h14
+if has('win32') || has('win64')
+  set guifont=Osaka－等幅:h11:cSHIFTJIS
+else
+  set guifontwide=ヒラギノ角ゴ\ StdN\ W4:h14
+endif
 
 colorscheme desert
