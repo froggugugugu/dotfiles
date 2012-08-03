@@ -263,6 +263,93 @@ snippet extpanel
 	});
 	// }}}
 
+snippet extformpanel
+	// {{{ '${1:app}.view.${2:FormPanel}',
+	/**
+	 * @class $1.view.$2
+	 * ${3:desctription}
+	 */
+	Ext.define('$1.view.$2', {
+		// {{{ extend
+
+		extend : 'Ext.form.Panel',
+
+		// }}}
+		// {{{ alias
+	
+		alias : 'widget.${4:panel}',
+	
+		// }}}
+		// {{{ requires
+	
+		requires : [
+		],
+	
+		// }}}
+		// {{{ ui
+	
+		//ui : 'styleclass',
+	
+		// }}}
+		// {{{ title
+	
+		//title : 'ユーザ詳細',
+	
+		// }}}
+		// {{{ store
+	
+		store: 'User',
+	
+		// }}}
+		// {{{
+	
+		api: {
+			// The server-side method to call for load() requests
+			load: XXX.XXX.loadmethod,
+			// The server-side must mark the submit handler as a 'formHandler'
+			submit: XXX.XXX.submitmethod
+		},
+	
+		// }}}
+		// {{{ paramOrder
+	
+		paramOrder: ['data'],
+	
+		// }}}
+		width: 300,
+		// {{{ items
+	
+		items : [{
+			xtype: 'hidden',
+			name: 'id'
+		},{
+			xtype: 'textfield',
+			name: 'userid',
+			fieldLabel: 'ユーザID'
+		}],
+		buttons: [{
+			xtype: 'button',
+			text: 'キャンセル',
+			action: 'cancel'
+		},{
+			xtype: 'button',
+			text: '更新',
+			action: 'update'
+		},{
+			xtype: 'button',
+			text: '追加',
+			action: 'add'
+		},{
+			xtype: 'button',
+			text: '削除',
+			action: 'delete'
+		}]
+	
+		// }}}
+	}
+);
+// }}}
+
 snippet extgrid
 	// {{{ '${1:app}.view.${2:GridPanel}',
 	/**
